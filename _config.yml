@@ -1,1 +1,20 @@
+lang: ja-JP
+timezone: Asia/Tokyo
+title: The Newer The Merrier
+description: 
+
+url: 
+baseurl: 
+permalink: /blog/:year-:month-:day-:title/
+
+show_drafts: true
+
+paginate: 10
+paginate_path: /blog/page/:num/
+
+github:
+  is_project_page: true
+show_downloads: false
+google_analytics: 
+
 theme: jekyll-theme-cayman
