@@ -8,7 +8,7 @@ Git for Windows / PortableGitの話です。誰も好き好んでネットワー
 
 で、表題の通りですが、UNCパス経由で `git-bash.exe` は起動できません。実行してもノーリアクションです。また、ネットワークドライブにマウントしても同じく起動できません。そのくせ、たとえば `\\localhost\c$\path\to\git-bash.exe` などとしてローカル上のexeをあえてネットワークパスから叩いてみると、これまた同様の挙動を見ることができます。なんでや。
 
-解決方法ですが、仮に `Z:\App` 配下に `PortableGit` を置いたとすると、`%windir%\System32\cmd.exe /c "set MSYSTEM=MINGW64& "Z:\App\PortableGit\usr\bin\mintty.exe" -i "Z:\App\PortableGit\git-bash.exe" /usr/bin/bash --login"` が正解になります。
+解決方法ですが、仮に `Z:\App` 配下に `PortableGit` を置いたとすると、`%windir%\System32\cmd.exe /c "set MSYSTEM=MINGW64& start "Z:\App\PortableGit\usr\bin\mintty.exe" -i "Z:\App\PortableGit\git-bash.exe" /usr/bin/bash --login"` が正解になります。
 
 ショートカットを作成して、［リンク先］に上記コマンドを指定して、［作業フォルダー］には適当なプロジェクト置き場を設定、［実行時の大きさ］は最小化とし、［アイコンの変更…］で `git-bash.exe` のそれを指定しておけばよいでしょう。
 
